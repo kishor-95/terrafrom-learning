@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM_FAILURE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="error-state">
+    <div class="overlay-scanline"></div>
+    <div class="error-container">
+        <div class="error-code">0xDEADBEEF</div>
+        <h1 class="sys-title">CRITICAL_SYSTEM_FAILURE</h1>
+        
+        <div class="metrics-container" style="margin: 40px; width: 300px; text-align: left;">
+            <div class="log-entry error">> FATAL EXCEPTION IN MODULE: CORE_RENDERER</div>
+            <div class="log-entry error">> STACK TRACE: NULL_POINTER_REFERENCE</div>
+            <div class="log-entry error">> MEMORY DUMP: CORRUPTED</div>
+            <div class="log-entry error">> ATTEMPTING RECOVERY... FAILED</div>
+        </div>
+
+        <p class="error-msg">THE REQUESTED RESOURCE HAS CRASHED OR DOES NOT EXIST.</p>
+        
+        <button class="reboot-btn" onclick="location.href='index.html'">
+            [ MANUAL_REBOOT ]
+        </button>
+    </div>
+    <script>
+        // Simple glitch effect for error page logs
+        setInterval(() => {
+            const logs = document.querySelectorAll('.log-entry');
+            logs.forEach(log => {
+                log.style.opacity = Math.random() > 0.5 ? '1' : '0.5';
+            });
+        }, 100);
+    </script>
+</body>
+</html>

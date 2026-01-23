@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS_ADMIN // PORTFOLIO_V1.0</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="overlay-scanline"></div>
+    <div class="layout-container">
+        <!-- Navigation / Header -->
+        <header class="sys-header">
+            <div class="brand">
+                <span class="status-indicator online"></span>
+                <span class="sys-title">DEV_OPS_SYSTEM_V1.0</span>
+            </div>
+            <nav class="theme-controls">
+                <span>THEME:</span>
+                <button class="theme-btn" data-color="neon-green" aria-label="Green Theme">🟢</button>
+                <button class="theme-btn" data-color="cyber-blue" aria-label="Blue Theme">🔵</button>
+                <button class="theme-btn" data-color="alert-amber" aria-label="Amber Theme">🟠</button>
+            </nav>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- 1. System Status Panel -->
+            <section class="panel status-panel">
+                <h2 class="panel-header">:: SYSTEM_METRICS ::</h2>
+                <div class="metrics-container">
+                    <div class="metric-card">
+                        <span class="metric-label">FOCUS_LEVEL</span>
+                        <div class="metric-bar-bg"><div class="metric-bar" id="bar-focus" style="width: 0%"></div></div>
+                        <span class="metric-value" id="val-focus">0%</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">COFFEE_INTAKE</span>
+                        <div class="metric-bar-bg"><div class="metric-bar" id="bar-coffee" style="width: 0%"></div></div>
+                        <span class="metric-value" id="val-coffee">0mL</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">UPTIME</span>
+                        <span class="metric-value text-large" id="val-uptime">00:00:00</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">DEPLOY_HEALTH</span>
+                        <span class="status-text blink" id="val-health">CALCULATING...</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Skill Matrix -->
+            <section class="panel skill-panel">
+                <h2 class="panel-header">:: INFRASTRUCTURE_MATRIX ::</h2>
+                <div class="skill-grid" id="skill-grid">
+                    <!-- Skills injected via JS -->
+                </div>
+                <div id="skill-details" class="skill-details hidden">
+                    <h3 id="detail-title">SELECT_MODULE</h3>
+                    <p id="detail-desc">Click a skill node to inspect dependencies and proficiency stats.</p>
+                    <div class="detail-meter-bg"><div id="detail-meter" class="detail-meter-fill"></div></div>
+                </div>
+            </section>
+
+            <!-- 3. Activity Logs -->
+            <section class="panel log-panel">
+                <h2 class="panel-header">:: KERNEL_LOGS ::</h2>
+                <div class="log-window" id="log-window">
+                    <!-- Logs injected via JS -->
+                </div>
+            </section>
+
+            <!-- 4. Command Palette -->
+            <section class="panel cmd-panel">
+                <div class="cmd-interface">
+                    <span class="prompt-user">root@portfolio:~$</span>
+                    <input type="text" id="cmd-input" class="cmd-input" placeholder="Type 'help' for commands..." autocomplete="off" spellcheck="false" autofocus>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
