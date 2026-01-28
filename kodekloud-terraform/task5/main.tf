@@ -1,5 +1,5 @@
 variable "cidr_block" {
-  default = "192.168.0.0/24"
+  default = "10.1.0.0/24"
   type    = string
 
 }
