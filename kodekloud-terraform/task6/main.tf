@@ -4,12 +4,17 @@ variable "eip_name" {
 }
 
 data "aws_vpc" "default" {}
-
-resource "aws_eip" "devops_eip" {
-  vpc = data.aws_vpc.default
-  tags = {
+resource "aws_eip" "devopseip" {
+    domain = "vpc"
+    
+ tags = {
     Name = var.eip_name
   }
+}
+
+
+output "eip" {
+    value = aws_eip.devopseip.public_ip
 }
 
 
