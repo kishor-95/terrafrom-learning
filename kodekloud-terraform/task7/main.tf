@@ -5,14 +5,9 @@ resource "tls_private_key" "ssh_key" {
 
 resource "aws_key_pair" "my_key" {
   key_name   = var.key_name
-  public_key = tls_private_key.ssh_key.public_key_openssh
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
-resource "local_file" "private_key" {
-  content         = tls_private_key.ssh_key.private_key_pem
-  filename        = "${path.module}/${var.key_name}.pem"
-  file_permission = "0400"
-}
 ## default vpc_id
 
 data "aws_vpc" "default" {}
