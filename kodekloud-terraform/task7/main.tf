@@ -22,7 +22,8 @@ data "aws_security_group" "default" {}
 resource "aws_instance" "example" {
         ami = var.ami
         instance_type = var.instance_type
-        vpc_security_group_ids = data.aws_security_group.default
+        vpc_security_group_ids = data.aws_security_group.default.id
+        key_name = aws_key_pair.my_key.id
 
 
     tags = {
