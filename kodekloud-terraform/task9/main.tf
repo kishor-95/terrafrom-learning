@@ -1,8 +1,11 @@
-resource "aws_ebs_volume" "datacenter_volume" {
-  size      = 2
-  type      = "gp3"
-  availability_zone = "us-east-1a"
-  
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
+resource "aws_ebs_volume" "datacenter" {
+  availability_zone = data.aws_availability_zones.available.names[0]
+  size              = 2
+  type              = "gp3"
 
   tags = {
     Name = "datacenter-volume"
