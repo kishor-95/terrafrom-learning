@@ -11,7 +11,7 @@ resource "aws_ebs_volume" "k8s_volume" {
 
 resource "aws_ebs_snapshot" "example_snapshot" {
   volume_id = aws_ebs_volume.k8s_volume.id
-
+  description = "datacenter volume"
   tags = {
     Name = "datacenter-vol-ss"
   }
