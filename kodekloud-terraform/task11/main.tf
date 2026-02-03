@@ -4,7 +4,7 @@ resource "aws_cloudwatch_metric_alarm" "nautilus_alarm" {
   evaluation_periods        = 5
   metric_name               = "CPUUtilization"
   namespace                 = "AWS/EC2"
-  period                    = 1
+  period                    = 60
   statistic                 = "Average"
   threshold                 = 80
   alarm_description         = "This metric monitors ec2 cpu utilization"
