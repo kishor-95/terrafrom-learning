@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "devops_s3_public" {
-    bucket = "devops-s3-11613"
+  bucket = "devops-s3-11613"
 }
 
 
@@ -10,4 +10,8 @@ resource "aws_s3_bucket_public_access_block" "Pulic_bucket" {
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
+}
+
+output "bucket_address" {
+  value = aws_s3_bucket.devops_s3_public.bucket_domain_name
 }
