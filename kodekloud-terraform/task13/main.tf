@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "nautilus_s3_private" {
 }
 
 
-resource "aws_s3_bucket_public_access_block" "Pulic_bucket" {
+resource "aws_s3_bucket_public_access_block" "private_bucket" {
   bucket = aws_s3_bucket.nautilus_s3_private.id
 
   block_public_acls       = true
