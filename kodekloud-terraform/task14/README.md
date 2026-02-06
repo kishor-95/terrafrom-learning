@@ -1,16 +1,3 @@
-As part of the data migration process, the Nautilus DevOps team is actively creating several S3 buckets on AWS using Terraform. They plan to utilize both private and public S3 buckets to store the relevant data. Given the ongoing migration of other infrastructure to AWS, it is logical to consolidate data storage within the AWS environment as well.
+When establishing infrastructure on the AWS cloud, Identity and Access Management (IAM) is among the first and most critical services to configure. IAM facilitates the creation and management of user accounts, groups, roles, policies, and other access controls. The Nautilus DevOps team is currently in the process of configuring these resources and has outlined the following requirements:
 
-Create an S3 bucket using Terraform with the following details:
-
-1) The name of the S3 bucket must be nautilus-s3-29871.
-
-2) The S3 bucket must block all public access, making it a private bucket.
-
-The Terraform working directory is /home/bob/terraform. Create the main.tf file (do not create a different .tf file) to accomplish this task.
-
-Notes:
-
-Use Terraform to provision the S3 bucket.
-Right-click under the EXPLORER section in VS Code and select Open in Integrated Terminal to launch the terminal.
-Ensure the resources are created in the us-east-1 region.
-The bucket must have block public access enabled to restrict any public access.
+For this task, create an IAM user named iamuser_javed using terraform. The Terraform working directory is /home/bob/terraform. Create the main.tf file (do not create a different .tf file) to accomplish this task.
