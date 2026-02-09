@@ -4,7 +4,10 @@ resource "aws_dynamodb_table" "table" {
     billing_mode = "PAY_PER_REQUEST"
 
  attribute {
-    name = "UserId"
+    name = "devops_id"
     type = "S"
+  }
+ Tags = {
+	Name = "devops-user"   
   }
 }
