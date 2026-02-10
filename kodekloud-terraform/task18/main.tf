@@ -1,8 +1,14 @@
 resource "aws_kinesis_stream" "test_stream" {
-  name             = "devops-stream"
-  shard_count       = 1
+  name             = "xfusion-stream"
+  shard_count      = 1
+  retention_period = 24
 
-  tags = {
-    Name = "devops-stream"
+  shard_level_metrics = [
+    "IncomingBytes",
+    "OutgoingBytes",
+  ]
+
+  stream_mode_details {
+    stream_mode = "PROVISIONED"
   }
 }
