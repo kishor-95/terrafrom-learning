@@ -7,3 +7,7 @@ Make sure the EC2 instance devops-ec2 is in running state after the change.
 The Terraform working directory is /home/bob/terraform. Update the main.tf file (do not create a separate .tf file) to change the instance type.
 
 Note: Right-click under the EXPLORER section in VS Code and select Open in Integrated Terminal to launch the terminal.
+
+
+## To check the status of instance 
+## aws ec2 describe-instances devops-ec2
