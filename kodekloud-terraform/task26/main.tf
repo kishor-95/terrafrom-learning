@@ -25,5 +25,5 @@ resource "aws_eip_association" "eip_assoc" {
 }
 
 output "Elastic_IP" {
-  value = "aws_eip.ec2_eip.id"
+  value = aws_instance.ec2.public_ip
 }
