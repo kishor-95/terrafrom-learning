@@ -1,17 +1,17 @@
-# Add your code below
-## This is for importing the bucket to run terraform import aws_s3_bucket.example <bucket_name>
-resource "aws_s3_bucket" "example" {
-  bucket = "datacenter-bck-12531"
-  force_destroy = true
-  depend_on = [null_resource.backup_to_local]
+variable "bucket_name" {
+  default = "datacenter-bck-12531"
 }
 
-resource "null_resource" "backup_to_local" {
+resource "null_resource" "backup_and_delete" {
+
   provisioner "local-exec" {
-    command = "aws s3 sync s3://${aws_s3_bucket.example.bucket}  /opt/s3-backup/"
+    command = <<EOT
+aws s3 sync s3://${var.bucket_name} /opt/s3-backup/ &&
+aws s3 rb s3://${var.bucket_name} --force
+EOT
   }
 
-   triggers = {
-    bucket = aws_s3_bucket.example.bucket_name
+  triggers = {
+    bucket = var.bucket_name
   }
 }
