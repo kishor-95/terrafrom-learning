@@ -6,6 +6,12 @@ terraform {
     }
   }
   required_version = ">= 1.5.0"
+  backend "s3" {
+  	bucket = "eks-cluster-tf-state-bucket-03-2026"
+	region = "ap-south-1"
+	use_lockfile = true
+	key = "voting-app/terraform.tfstate"
+  }
 }
 
 provider "aws" {
