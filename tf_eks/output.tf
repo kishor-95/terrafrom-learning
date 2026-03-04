@@ -10,5 +10,5 @@ output "vpc" {
 
 output "subnet" {
   description = "The value of the subnetes"
-  value = aws_subnet.eks_subnet[*].id
+  value = aws_subnet.private[*].id
 }
