@@ -5,3 +5,7 @@ resource "aws_iam_user" "example" {
         Name = var.KKE_user
     }
 }
+
+output "id_user" {
+    value = aws_iam_user.example.id
+}
