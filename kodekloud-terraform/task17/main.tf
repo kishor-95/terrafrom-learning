@@ -7,7 +7,7 @@ resource "aws_dynamodb_table" "table" {
     name = "devops_id"
     type = "S"
   }
- Tags = {
+ tags = {
 	Name = "devops-user"   
   }
 }
